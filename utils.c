@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include "utils.h"
 
-// ─── Clear Screen ────────────────────────────────────────
+// Clear Screen
 void clearScreen() {
     #ifdef _WIN32
         system("cls");
@@ -13,12 +13,12 @@ void clearScreen() {
     #endif
 }
 
-// ─── Print Divider ───────────────────────────────────────
+// Print Divider
 void printDivider() {
     printf("\n────────────────────────────────────────────────\n");
 }
 
-// ─── Validate Input ──────────────────────────────────────
+// Validate Input
 int validateInput(int value, int min, int max) {
     if (value >= min && value <= max)
         return 1;
@@ -27,14 +27,14 @@ int validateInput(int value, int min, int max) {
     return 0;
 }
 
-// ─── Pause Screen ────────────────────────────────────────
+// Pause Screen
 void pauseScreen() {
     printf("\n⏸  Press Enter to continue...");
     getchar();
     getchar();
 }
 
-// ─── Loading Animation ───────────────────────────────────
+// Loading Animation
 void printLoading(char *message) {
     int i;
     printf("\n%s ", message);
@@ -46,7 +46,7 @@ void printLoading(char *message) {
     printf("\n");
 }
 
-// ─── Reset Prediction Result ─────────────────────────────
+// Reset Prediction Result
 void resetPredictionResult(PredictionResult *result) {
     int i;
     result->is_safe       = 0;
@@ -59,7 +59,7 @@ void resetPredictionResult(PredictionResult *result) {
     }
 }
 
-// ─── Copy System State ───────────────────────────────────
+// Copy System State
 void copySystemState(SystemState *dest, SystemState *src) {
     int i, j;
 
@@ -80,12 +80,12 @@ void copySystemState(SystemState *dest, SystemState *src) {
     }
 }
 
-// ─── Print Error ─────────────────────────────────────────
+// Print Error
 void printError(char *message) {
     printf("\n❌ ERROR: %s\n", message);
 }
 
-// ─── Print Success ───────────────────────────────────────
+// Print Success
 void printSuccess(char *message) {
     printf("\n✅ SUCCESS: %s\n", message);
 }
