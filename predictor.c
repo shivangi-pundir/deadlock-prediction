@@ -2,7 +2,7 @@
 #include <string.h>
 #include "predictor.h"
 
-// ─── Banker's Algorithm ──────────────────────────────────
+// Banker's Algorithm
 int isSafeState(SystemState *state, PredictionResult *result) {
     int i, j, k;
     int work[MAX_RESOURCES];
@@ -72,7 +72,7 @@ int isSafeState(SystemState *state, PredictionResult *result) {
     return result->is_safe;
 }
 
-// ─── Predict Future Request ──────────────────────────────
+// Predict Future Request
 int predictRequest(SystemState *state, int process_id,
                    int request[], PredictionResult *result) {
     int j;
@@ -125,7 +125,7 @@ int predictRequest(SystemState *state, int process_id,
     return safe;
 }
 
-// ─── Cycle Detection (RAG) ───────────────────────────────
+// Cycle Detection (RAG)
 int detectCycle(SystemState *state, PredictionResult *result) {
     int i, j;
     // Wait-for graph: visited and recursion stack
@@ -188,7 +188,7 @@ int detectCycle(SystemState *state, PredictionResult *result) {
     return cycle_found;
 }
 
-// ─── Calculate Risk Level ────────────────────────────────
+// Calculate Risk Level
 void calculateRiskLevel(SystemState *state, PredictionResult *result) {
     int j;
     int total_available = 0;
@@ -212,7 +212,7 @@ void calculateRiskLevel(SystemState *state, PredictionResult *result) {
         result->risk_level = 2;      // 🔴 Danger
 }
 
-// ─── Display Prediction Result ───────────────────────────
+// Display Prediction Result
 void displayPredictionResult(PredictionResult *result, int num_processes) {
     int i;
 
