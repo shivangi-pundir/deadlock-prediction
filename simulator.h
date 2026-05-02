@@ -1,16 +1,16 @@
 #ifndef SIMULATOR_H
 #define SIMULATOR_H
 
-// ─── Constants ───────────────────────────────────────────
+// Constants
 #define MAX_PROCESSES 10
 #define MAX_RESOURCES 10
 
-// ─── Data Structures ─────────────────────────────────────
+// Data Structures
 
 // Holds all system state
 typedef struct {
-    int num_processes;                          // Total number of processes
-    int num_resources;                          // Total number of resource types
+    int num_processes;                          
+    int num_resources;                          
 
     int allocation[MAX_PROCESSES][MAX_RESOURCES]; // What each process currently holds
     int max_demand[MAX_PROCESSES][MAX_RESOURCES]; // Maximum demand of each process
@@ -22,7 +22,7 @@ typedef struct {
     int finished[MAX_PROCESSES];                // Track if process completed
 } SystemState;
 
-// ─── Function Declarations ───────────────────────────────
+// Function Declarations
 
 // Initialize the system with user input
 void initializeSystem(SystemState *state);
