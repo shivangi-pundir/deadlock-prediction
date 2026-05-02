@@ -3,7 +3,7 @@
 
 #include "simulator.h"
 
-// ─── Result Structure ─────────────────────────────────────
+// Result Structure
 
 // Holds the result of prediction analysis
 typedef struct {
@@ -14,7 +14,7 @@ typedef struct {
     int risk_level;                     // 0 = safe, 1 = warning, 2 = danger
 } PredictionResult;
 
-// ─── Function Declarations ───────────────────────────────
+// Function Declarations
 
 // Banker's Algorithm — checks if system is in safe state
 // Returns 1 if safe, 0 if unsafe
