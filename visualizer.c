@@ -3,7 +3,7 @@
 #include <string.h>
 #include "visualizer.h"
 
-// ─── Welcome Banner ──────────────────────────────────────
+// Welcome Banner
 void displayBanner() {
     printf("\n");
     printf("╔════════════════════════════════════════════════╗\n");
@@ -15,7 +15,7 @@ void displayBanner() {
     printf("\n");
 }
 
-// ─── Main Menu ───────────────────────────────────────────
+// Main Menu
 void displayMenu() {
     printf("\n╔════════════════════════════════════════════════╗\n");
     printf("║                  MAIN MENU                     ║\n");
@@ -32,7 +32,7 @@ void displayMenu() {
     printf("\nEnter your choice: ");
 }
 
-// ─── Resource Allocation Graph ───────────────────────────
+// Resource Allocation Graph
 void displayRAG(SystemState *state) {
     int i, j;
 
@@ -95,7 +95,7 @@ void displayRAG(SystemState *state) {
     if (!found) printf("   No wait-for dependencies.\n");
 }
 
-// ─── Summary Table ───────────────────────────────────────
+// Summary Table
 void displaySummaryTable(SystemState *state, PredictionResult *result) {
     int i, j;
 
@@ -139,7 +139,7 @@ void displaySummaryTable(SystemState *state, PredictionResult *result) {
         printf("🔴 DEADLOCK DANGER\n");
 }
 
-// ─── Process Status ──────────────────────────────────────
+// Process Status
 void displayProcessStatus(SystemState *state, PredictionResult *result) {
     int i, j;
 
@@ -179,7 +179,7 @@ void displayProcessStatus(SystemState *state, PredictionResult *result) {
     }
 }
 
-// ─── Resource Status ─────────────────────────────────────
+// Resource Status
 void displayResourceStatus(SystemState *state) {
     int i, j;
 
@@ -209,7 +209,7 @@ void displayResourceStatus(SystemState *state) {
     }
 }
 
-// ─── Save Results to File ────────────────────────────────
+// Save Results to File
 void saveResultsToFile(SystemState *state, PredictionResult *result) {
     int i, j;
 
