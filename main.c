@@ -6,7 +6,7 @@
 #include "utils.h"
 
 int main() {
-    // ─── Declare Variables ───────────────────────────────
+    // Declare Variables
     SystemState state;
     PredictionResult result;
     int choice;
@@ -14,20 +14,20 @@ int main() {
     int request[MAX_RESOURCES];
     int i;
 
-    // ─── Welcome Screen ──────────────────────────────────
+    // Welcome Screen
     clearScreen();
     displayBanner();
 
-    // ─── Initialize System ───────────────────────────────
+    // Initialize System
     printLoading("Initializing system");
     initializeSystem(&state);
     resetPredictionResult(&result);
 
-    // ─── Run Initial Prediction ──────────────────────────
+    // Run Initial Prediction
     printLoading("Running initial deadlock analysis");
     isSafeState(&state, &result);
 
-    // ─── Main Menu Loop ──────────────────────────────────
+    //Main Menu Loop 
     while (1) {
         clearScreen();
         displayBanner();
@@ -36,14 +36,14 @@ int main() {
 
         switch (choice) {
 
-            // ── Option 1: Display System State ───────────
+            // Option 1: Display System State
             case 1:
                 clearScreen();
                 displayState(&state);
                 pauseScreen();
                 break;
 
-            // ── Option 2: Run Deadlock Prediction ────────
+            // Option 2: Run Deadlock Prediction
             case 2:
                 clearScreen();
                 printLoading("Running Banker's Algorithm");
@@ -65,7 +65,7 @@ int main() {
                 pauseScreen();
                 break;
 
-            // ── Option 3: Simulate Resource Request ──────
+            // Option 3: Simulate Resource Request 
             case 3:
                 clearScreen();
                 printf("\n╔════════════════════════════════════════════════╗\n");
@@ -98,14 +98,14 @@ int main() {
                 pauseScreen();
                 break;
 
-            // ── Option 4: Display RAG ─────────────────────
+            // Option 4: Display RAG
             case 4:
                 clearScreen();
                 displayRAG(&state);
                 pauseScreen();
                 break;
 
-            // ── Option 5: Process Status ──────────────────
+            // Option 5: Process Status
             case 5:
                 clearScreen();
                 resetPredictionResult(&result);
@@ -114,14 +114,14 @@ int main() {
                 pauseScreen();
                 break;
 
-            // ── Option 6: Resource Status ─────────────────
+            // Option 6: Resource Status
             case 6:
                 clearScreen();
                 displayResourceStatus(&state);
                 pauseScreen();
                 break;
 
-            // ── Option 7: Save Results ────────────────────
+            // Option 7: Save Results
             case 7:
                 clearScreen();
                 resetPredictionResult(&result);
@@ -130,16 +130,16 @@ int main() {
                 pauseScreen();
                 break;
 
-            // ── Option 8: Exit ────────────────────────────
+            // Option 8: Exit
             case 8:
                 clearScreen();
                 printf("\n╔════════════════════════════════════════════════╗\n");
                 printf("║       Thank you for using DeadlockPredictor    ║\n");
-                printf("║              Goodbye! 👋                       ║\n");
+                printf("║              Goodbye!                       ║\n");
                 printf("╚════════════════════════════════════════════════╝\n\n");
                 exit(0);
 
-            // ── Invalid Choice ────────────────────────────
+            // Invalid Choice
             default:
                 printError("Invalid choice! Please select 1-8");
                 pauseScreen();
