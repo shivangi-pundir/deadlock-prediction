@@ -12,7 +12,10 @@ void initializeSystem(SystemState *state) {
 
     printf("\nEnter number of processes (max %d): ", MAX_PROCESSES);
     scanf("%d", &state->num_processes);
-
+while(state->num_processes < 1 || state->num_processes > MAX_PROCESSES) {
+    printf("❌ Invalid! Enter between 1 and %d: ", MAX_PROCESSES);
+    scanf("%d", &state->num_processes);
+}
     printf("Enter number of resource types (max %d): ", MAX_RESOURCES);
     scanf("%d", &state->num_resources);
 
