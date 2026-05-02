@@ -4,7 +4,7 @@
 #include "simulator.h"
 #include "predictor.h"
 
-// ─── Function Declarations ───────────────────────────────
+// Function Declarations
 
 // Print welcome banner
 void displayBanner();
