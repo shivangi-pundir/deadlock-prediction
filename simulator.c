@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "simulator.h"
 
-// ─── Initialize System ───────────────────────────────────
+// Initialize System
 void initializeSystem(SystemState *state) {
     int i, j;
 
@@ -56,7 +56,7 @@ while(state->num_processes < 1 || state->num_processes > MAX_PROCESSES) {
     printf("\n✅ System initialized successfully!\n");
 }
 
-// ─── Calculate Need Matrix ───────────────────────────────
+// Calculate Need Matrix
 void calculateNeed(SystemState *state) {
     int i, j;
     for (i = 0; i < state->num_processes; i++) {
@@ -67,7 +67,7 @@ void calculateNeed(SystemState *state) {
     }
 }
 
-// ─── Display Full System State ───────────────────────────
+// Display Full System State
 void displayState(SystemState *state) {
     int i, j;
 
@@ -115,7 +115,7 @@ void displayState(SystemState *state) {
     printf("\n");
 }
 
-// ─── Display Need Matrix Only ────────────────────────────
+// Display Need Matrix Only
 void displayNeedMatrix(SystemState *state) {
     int i, j;
     printf("\n📊 Need Matrix (Remaining Demand):\n");
